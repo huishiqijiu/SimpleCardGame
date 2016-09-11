@@ -1,0 +1,56 @@
+﻿@using System.Web.Script.Serialization
+@model CardGame.ViewModels.PlayGameViewModel
+
+@{
+    ViewBag.Title = "Play";
+    string data = new JavaScriptSerializer().Serialize(Model);
+}
+<link href="~/Content/PlayGame.css" rel="stylesheet" />
+<script src="~/scripts/KOPlayGameViewModel.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" id="cardsContainer">
+            <img src="~/Images/c159b4738dae9c9d8d6417228024de8d.jpg" alt="BackOfCard" height="559" width="400" /><br /><br />
+            <input class="btn-danger" id="shuffleBtn" value="Shuffle" type="button" data-bind="click: ShuffleCards" />
+            <input class="btn-info" id="sortBtn" value="Sort" type="button" data-bind="click: SortCards" />
+            <input class="btn-success" id="flipBtn" value="Flip a Card" type="button" data-bind="click: FlipACard" />
+        </div>        
+        <div class="col-sm-6" id="openCard" >            
+                <p id="cardValue"></p>
+                <img id="cardSuit" src="~/Images/Blank (1).png" />            
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog modal-sm">
+        <!-- Modal content-->
+        <div class="modal-content">            
+            <div class="modal-body">
+                <p id="bravo">Bravo! You find her!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="playAgain" class="btn btn-warning" data-dismiss="modal">Play Agian</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    var koPlayGameViewModel;
+    var cardsFaceDown;
+    var shuffledCards;
+
+    $(document).ready(function () {
+        koPlayGameViewModel = new KOPlayGameViewModel(@Html.Raw(data));
+        ko.applyBindings(koPlayGameViewModel, $("#cardsContainer")[0]);
+        //flippedCard = new CardModel();
+        //ko.applyBindings(flippedCard, $('#openCard')[0]);
+        $('#playAgain').click(function () {
+            location.href = "/PlayGame/index";           
+        });
+        $('#myModal').on('hidden.bs.modal', function (e) {
+            window.location = "/PlayGame/index";
+        });
+    });
+</script>

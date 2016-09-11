@@ -1,0 +1,204 @@
+﻿	@import url(http://fonts.googleapis.com/css?family=Satisfy);   
+     @import url(http://fonts.googleapis.com/css?family=Nosifer);
+
+body {
+}
+.body-content{
+    margin-top: 15px;
+}
+#cardsContainer img {
+    border-radius: 17px;
+}
+#shuffleBtn, #sortBtn, #flipBtn, #bravo, #playAgain{
+    font-family: Satisfy;
+    font-size: 25px;
+    /*font-weight:bold;*/
+}
+#postsContainer{
+    position:relative;
+}
+#openCard{
+    height: 559px;
+    width: 400px;  
+    background-color:transparent;
+    border-radius: 17px;
+    padding: 20px;
+}
+#openCard p{
+    font-family: Satisfy;
+    font-size: 70px;
+    font-weight: bold;
+    text-align:left;
+}
+#openCard img{
+    height:300px;
+    width: 300px;    
+    border: 0;
+}
+.col-sm-6 {
+    text-align: center;
+}
+
+.quote-container {
+  margin-top: 50px;
+  position: relative;
+}
+
+.note {
+  color: black;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Satisfy;
+  font-size: 30px;  
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+}
+.note h2{    
+    font-family:Nosifer;
+}
+.yellow {    
+    background-image: url('../Images/vintage-wallpaper-8.jpg');
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+.pin {
+  background-color: #aaa;
+  display: block;
+  height: 30px;
+  width: 3px;
+  position: absolute;
+  left: 50%;
+  top: -16px;
+  z-index: 1;
+}
+.pin:after {
+  background-color: #A31;
+  background-image: radial-gradient(25% 25%, circle, hsla(0,0%,100%,.3), hsla(0,0%,0%,.3));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.1),
+              inset 3px 3px 3px hsla(0,0%,100%,.2),
+              inset -3px -3px 3px hsla(0,0%,0%,.2),
+              23px 20px 3px hsla(0,0%,0%,.15);
+  content: '';
+  height: 12px;
+  left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 12px;
+}
+.pin:before {
+  background-color: hsla(0,0%,0%,0.1);
+  box-shadow: 0 0 .25em hsla(0,0%,0%,.1);
+  content: '';
+  height: 24px;
+  width: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(57.5deg);
+  -moz-transform: rotate(57.5deg);
+  -webkit-transform: rotate(57.5deg);
+  -o-transform: rotate(57.5deg);
+  -ms-transform: rotate(57.5deg);
+  transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+}
+
+#notes {
+    /*padding-top: 20px;*/
+    position:absolute;
+    top: 30px;
+    left: 70%;
+    height:267px;
+    width: 189px;
+    border-radius: 5px;
+}
+#notes div {
+    position: relative;
+    
+    min-height: 100px;
+    margin: 25px auto;
+    
+    background: #fff ;
+    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px #000;
+    -webkit-transform: rotate(-.5deg); 
+    -moz-transform: rotate(-.5deg); 
+    -o-transform: rotate(-.5deg);     
+}
+
+#notes li:nth-child(even) {
+    -webkit-transform: rotate(.5deg); 
+    -moz-transform: rotate(.5deg); 
+    -o-transform: rotate(.5deg);     
+}
+
+#notes div p {
+    text-align: center;
+    font: normal normal normal 40px/48px 'Reenie Beanie', Helvetica, Arial, sans-serif;
+    color: #000;
+    text-shadow: white 1px 1px 0px;
+    overflow:hidden;
+}
+
+#notes div::before {
+    content: ' ';
+    display: block;
+    position: absolute; 
+    left: 115px;
+    top: -15px;
+    width: 75px;
+    height: 25px;
+    z-index: 2;
+    background-color: rgba(243,245,228,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 0 5px #888;
+    -moz-box-shadow: 0 0 5px #888;
+    box-shadow: 2px 2px 2px #000;
+    -webkit-transform: rotate(-6deg); 
+    -moz-transform: rotate(-6deg); 
+    -o-transform: rotate(-6deg); 
+}
+
+#notes li:nth-child(even)::before {
+    -webkit-transform: rotate(6deg); 
+    -moz-transform: rotate(6deg); 
+    -o-transform: rotate(6deg);
+}
+#frontCard{
+    border-radius: 7px;
+}
+@font-face {
+  font-family: 'Nosifer';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Nosifer-regular/Nosifer-regular.eot');
+  src: url('../fonts/Nosifer-regular/Nosifer-regular.eot?#iefix') format('embedded-opentype'),
+       local('Nosifer'),
+       local('Nosifer-regular'),
+       url('../') format('woff2'),
+       url('../fonts/Nosifer-regular/Nosifer-regular.woff') format('woff'),
+       url('../fonts/Nosifer-regular/Nosifer-regular.ttf') format('truetype'),
+       url('../fonts/Nosifer-regular/Nosifer-regular.svg#Nosifer') format('svg');
+}
+@font-face {
+  font-family: 'Satisfy';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Satisfy-regular/Satisfy-regular.eot');
+  src: url('../fonts/Satisfy-regular/Satisfy-regular.eot?#iefix') format('embedded-opentype'),
+       local('Satisfy'),
+       local('Satisfy-regular'),
+       url('../fonts/Satisfy-regular/Satisfy-regular.woff2') format('woff2'),
+       url('../fonts/Satisfy-regular/Satisfy-regular.woff') format('woff'),
+       url('../fonts/Satisfy-regular/Satisfy-regular.ttf') format('truetype'),
+       url('../fonts/Satisfy-regular/Satisfy-regular.svg#Satisfy') format('svg');
+}

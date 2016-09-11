@@ -1,0 +1,44 @@
+﻿
+@model CardGame.ViewModels.PlayGameViewModel
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+@*@import url(http://fonts.googleapis.com/css?family=Satisfy);*@
+
+<link href="~/Content/PlayGame.css" rel="stylesheet" />
+<div id="postsContainer">
+    <div class="quote-container">
+        <i class="pin"></i>
+        <div class="note yellow">
+            <h2><b>Wanted: The Queen</b></h2><br /><br />
+            <dl>
+                <dt><b>Goal: </b></dt>
+                <dd>- You win the game by finding the queen of heart. </dd>
+            </dl>
+            <br />
+            <dl>
+                <dt><b>Instructions: </b></dt>
+                <dd>- You will be able to choose to play with one, two or three decks of cards. </dd>
+                <dd>- You can flip the cards as you get them, which will be sorted by suit and value. </dd>
+                <dd>- You can at any time stop flipping, shuffle or sort the rest of cards, and continue flipping.</dd>
+            </dl>
+            <br />
+            <span>How many decks of cards do you dare to play? </span>
+            @Html.DropDownListFor(x => x.NumberOfDecks, new SelectList(new List<int> { 0, 1, 2, 3 }), new { @onchange = "SendNumberOfDecks(this.value)" })
+            <br /><br /><br />
+        </div>
+    </div>
+        <div id="notes">
+            <div id="frontCard">
+                <img src="~/Images/Hearts_CARDS_QueenGOLD.jpg" />
+            </div>
+        </div>    
+</div>  
+<script>
+        function SendNumberOfDecks(val) {
+            window.location.href = "/PlayGame/Play?numOfDecks=" + val;            
+        }
+   
+</script>
